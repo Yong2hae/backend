@@ -32,4 +32,12 @@ public class Scrap {
     @ManyToOne // 수정 예정
     @JoinColumn(name = "article_id")
     private Article article;
+
+    public static Scrap of(User user, Article article) {
+        return builder()
+                .user(user)
+                .article(article)
+                .build();
+    }
+
 }
