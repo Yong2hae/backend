@@ -43,4 +43,14 @@ public class Voca {
     @OneToOne // 수정 예정
     @JoinColumn(name = "article_id")
     private Article article;
+
+    public static Voca of(String word, String meaning, LocalDateTime createdAt, User user, Article article) {
+        return Voca.builder()
+                .word(word)
+                .meaning(meaning)
+                .createdAt(createdAt)
+                .user(user)
+                .article(article)
+                .build();
+    }
 }
