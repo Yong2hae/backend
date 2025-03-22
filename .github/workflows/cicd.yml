@@ -54,7 +54,7 @@ jobs:
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker build -t $DOCKER_USERNAME/${{secrets.DOCKER_REPOSITORY}} .
-          docker push $DOCKER_USERNAME/$DOCKER_REPOSITORY
+          docker push $DOCKER_USERNAME/${{secrets.DOCKER_REPOSITORY}}
 
   deploy:
     needs: build
