@@ -28,4 +28,16 @@ public class User {
     private String email;
 
     private String password;
+
+    public static User of(int age,
+                          String nickname,
+                          String email,
+                          String password) {
+        return User.builder()
+                .age(age)
+                .nickname(nickname)
+                .email(email)
+                .password(password)
+                .build();
+    }
 }
